@@ -3,18 +3,17 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'currencies_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false) 
 class CurrenciesDto {
   final bool success;
-  final Map<String, String> currencies;
 
-  CurrenciesDto({required this.success, required this.currencies});
+  final Map<String, String> symbols;
+
+  CurrenciesDto({required this.success, required this.symbols});
 
   factory CurrenciesDto.fromJson(Map<String, dynamic> json) {
     return _$CurrenciesDtoFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$CurrenciesDtoToJson(this);
-
-  CurrenciesEntity toEntity() => CurrenciesEntity(currencies: currencies);
+  CurrenciesEntity toEntity() => CurrenciesEntity(currencies: symbols);
 }

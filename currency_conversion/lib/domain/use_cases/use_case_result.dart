@@ -1,6 +1,7 @@
-class UseCaseResult {
+/// basic wrap class
+base class UseCaseResult {
   final bool isSuccesful;
-  final dynamic result;
+  final dynamic value;
 
-  UseCaseResult({required this.isSuccesful, required this.result});
+  UseCaseResult({required this.isSuccesful, required this.value});
 }
